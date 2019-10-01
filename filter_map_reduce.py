@@ -104,3 +104,30 @@ js_frameworks = list(filter(lambda x: x['language'] == 'javascript' and x['frame
 print('\nList of Javascript related frameworks:')
 print(', '.join(list(map(lambda x: x['framework'], js_frameworks))))
 # output: react, angular, vue, nodejs
+
+
+##############################################################################
+# WORKING WITH LISTS OF DICTIONARIES - MAPPING AND FILTERING
+##############################################################################
+
+solutions = [{'algo': 'dfs', 'route': [], 'steps': [], 'time': 2.22},
+             {'algo': 'dfs', 'route': [], 'steps': [], 'time': 1.32},
+             {'algo': 'dfs', 'route': [], 'steps': [], 'time': 1.62},
+             {'algo': 'dfs', 'route': [], 'steps': [], 'time': 0.72},
+             {'algo': 'dfs', 'route': [], 'steps': [], 'time': 1.72},
+             {'algo': 'a*', 'route': [], 'steps': [], 'time': 1.85},
+             {'algo': 'a*', 'route': [], 'steps': [], 'time': 1.12},
+             {'algo': 'a*', 'route': [], 'steps': [], 'time': 1.34},
+             {'algo': 'a*', 'route': [], 'steps': [], 'time': 0.62},
+             {'algo': 'a*', 'route': [], 'steps': [], 'time': 0.95}]
+
+# lambda function filters the list based on the algo input
+# algo = 'dfs' will return all solutions for DFS solver
+algo = 'dfs'
+result = list(filter(lambda x: algo in x['algo'], solutions))
+
+# second lambda function filters the list of dicts based on algo input
+# filtered list is passed to the first map lambda function
+# which returns all the values of the time key
+algo = 'a*'
+result = list(map(lambda x: x['time'], filter(lambda x: algo in x['algo'], solutions)))
