@@ -34,8 +34,7 @@ def get_population_stat():
     return no_danes_per_age, no_foreign_per_age
 
 
-# fejl:
-# hvor kommer "danes_per_age" og "foreigners_per_age" fra?
+danes_per_age, foreigners_per_age = get_population_stat()
 
 
 ages = list(danes_per_age.keys())
