@@ -30,7 +30,9 @@ def get_population_stat(year_of_interest=2015):
     return no_citicens_per_age
 
 
-stats = get_population_stat(2015)
+# year range: 1992 - 2015
+year = 2015
+stats = get_population_stat(year)
 ages = list(stats.keys())
 no_citicens = list(stats.values())
 
@@ -42,7 +44,7 @@ plt.bar(
 # plt.ticklabel_format(useOffset=False)
 plt.axis([0, max(ages) + 10, 0, 17000])  # axis(x-min, x-max, y-min, y-max)
 
-title = "Distribution of {} CPH Citizens in {}".format(sum(no_citicens), 2015)
+title = "Distribution of {} CPH Citizens in {}".format(sum(no_citicens), year)
 
 plt.title(title, fontsize=12)
 

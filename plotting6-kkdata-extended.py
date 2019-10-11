@@ -55,6 +55,6 @@ plt.bar(ages_f, no_citicens_f, width=0.5, linewidth=0, align="center", color="re
 fakes = list(range(10900, 300, -100))
 print(len(ages), "\n\n", no_citicens, "\n\n", len(fakes))
 
-# plt.bar(ages, fakes, width=0.5, linewidth=0, align='center', color='yellow')
+# plt.bar(ages, fakes, width=0.5, linewidth=0, align="center", color="yellow")
 
 plt.show()
